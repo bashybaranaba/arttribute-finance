@@ -1,6 +1,9 @@
 "use client";
-import { WagmiConfig, createConfig } from "wagmi";
+import { WagmiConfig, createConfig, Chain } from "wagmi";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+import { mainnet, polygon, optimism, arbitrum, sepolia } from "wagmi/chains";
+
+const chains = [mainnet, polygon, optimism, arbitrum, sepolia];
 
 const config = createConfig(
   getDefaultConfig({
@@ -11,7 +14,7 @@ const config = createConfig(
 
     // Required
     appName: "Arttribute Finance",
-
+    chains: chains,
     // Optional
     appDescription: "Your App Description",
     appUrl: "https://family.co", // your app's url
